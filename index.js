@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const telegram = new Telegram(process.env.BOT_TOKEN);
 const chatId = '340220499';
+const chat2Id = '914347880';
 const checkTimeout = 5000;
 
 telegram.sendMessage(
@@ -25,6 +26,12 @@ const main = async () => {
                 chatId,
                 `CAR IS HERE!!! go check https://showroom.hyundai.ru/`
             );
+
+            telegram.sendMessage(
+                chat2Id,
+                `CAR IS HERE!!! go check https://showroom.hyundai.ru/`
+            );
+
             setTimeout(main, checkTimeout)
 
         }
