@@ -17,6 +17,10 @@ const checkCarAvailability = async () => {
 }
 
 const main = async () => {
+    telegram.sendMessage(
+        chatId,
+        `check!`
+    );
     try {
         const isCarAvailable = await checkCarAvailability();
         if(isCarAvailable) {
