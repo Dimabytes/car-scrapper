@@ -6,6 +6,11 @@ const telegram = new Telegram(process.env.BOT_TOKEN);
 const chatId = '340220499';
 const checkTimeout = 3000;
 
+telegram.sendMessage(
+    chatId,
+    `bot is started`
+);
+
 const checkCarAvailability = async () => {
     const {data} = await axios.get('https://showroom.hyundai.ru/rest/configurator/37/car-showroom');
     return data.startDiscountAvailable || data.gpDiscountAvailable;
