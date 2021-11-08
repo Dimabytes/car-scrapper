@@ -13,8 +13,8 @@ telegram.sendMessage(
 );
 
 const checkCarAvailability = async () => {
-    const {data} = await axios.get('https://showroom.hyundai.ru/rest/configurator/37/car-showroom');
-    return data.startDiscountAvailable || data.gpDiscountAvailable;
+    const {data} = await axios.get('https://showroom.hyundai.ru/rest/car');
+    return data.length > 24
 }
 
 const main = async () => {
@@ -34,8 +34,9 @@ const main = async () => {
 
             setTimeout(main, checkTimeout)
 
+        } else {
+            setTimeout(main, checkTimeout)
         }
-        setTimeout(main, checkTimeout)
 
     } catch (e) {
         telegram.sendMessage(
