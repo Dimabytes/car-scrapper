@@ -32,7 +32,7 @@ const main = async () => {
                 `CAR IS HERE!!! go check https://showroom.hyundai.ru/`
             );
 
-            setTimeout(main, checkTimeout)
+            setTimeout(main, 60000)
 
         } else {
             setTimeout(main, checkTimeout)
@@ -43,7 +43,7 @@ const main = async () => {
             chatId,
             `ERROR in bot! \n ${e.message}`
         );
-        setTimeout(main, checkTimeout)
+        setTimeout(main, 5000)
     }
 }
 
